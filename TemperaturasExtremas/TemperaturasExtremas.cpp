@@ -8,7 +8,7 @@
 #include <vector>
 
 
-// función que resuelve el problema (se trata de una lineal de orden O(n)
+// función que resuelve el problema (se trata de una lineal de orden O(n))
 void resolver(std::vector<int> datos) {
     int picos = 0, valles = 0, i = 1;
 
