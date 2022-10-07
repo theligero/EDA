@@ -97,8 +97,8 @@ public:
 
     // función constante
     void removeMax() {
-        if (size() != 0) 
-            remove(array[nelems - 1]);
+        if (size() != 0)
+            nelems--;
     }
 
     // función constante

@@ -9,10 +9,10 @@
 #include "Set.h"
 
 
-// se trata de una función del tipo k*log(n) ya que será lineal por
-// la parte de k ya que el recorrido del vector será inevitable mientras
-// que se hará la busqueda bineria del vector ordenado de elems a devolver
-// por la función
+// se trata de una función del tipo nlog(k) ya que será lineal por
+// la parte de n ya que el recorrido del vector será inevitable mientras
+// que se hará la busqueda binaria del vector ordenado de elems (k) 
+// a devolver por la función
 Set<int> resolver(const std::vector<int>& datos, const int& tam) {
     Set<int> aux; int i = 0;
 
