@@ -139,7 +139,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="EliminarTodasAparicionesEltoEnLista.cpp" />
+    <ClCompile Include="Externo.cpp" />
+    <ClCompile Include="Interno.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="deque_eda.h" />

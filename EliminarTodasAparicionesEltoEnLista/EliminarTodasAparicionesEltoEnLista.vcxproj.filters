@@ -15,7 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="EliminarTodasAparicionesEltoEnLista.cpp">
+    <ClCompile Include="Externo.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Interno.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>

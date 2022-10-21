@@ -130,6 +130,16 @@ public:
       this->borra_elem(it.act);
       return next;
    }
+
+   void deleteRepeated(int dato) {
+       Nodo* it = this->fantasma->sig;
+       Nodo* aux;
+
+       while (it != this->fantasma) {
+           if (it->elem == dato) { aux = it; it = aux->sig; this->borra_elem(aux); }
+           else it = it->sig;
+       }
+   }
 };
 
 #endif // list_eda_h
