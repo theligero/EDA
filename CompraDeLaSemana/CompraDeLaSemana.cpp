@@ -9,30 +9,30 @@
 
 using Matrix = std::vector<std::vector<int>>;
 
-bool esValida(const std::vector<int>& soluc, const int& pos) {
-    return soluc[pos] <= 3;
-}
 
 // función que resuelve el problema
 void resolver(std::vector<int>& soluc, int k, const int& n, 
     const int& m, const Matrix& super, int& mejorGasto, int gastoAct,
-    const int& minElto) {
+    const std::vector<int>& minEltos) {
 
     // i es el i-ésimo producto del vector solución
     // k es la profundidad del nº de productos
 
     for (int i = 0; i < m; ++i) {
         soluc[i] += 1;
-        if (esValida(soluc, i)) {
+        if (soluc[i] <= 3) {
             gastoAct += super[i][k];
             if (k == n - 1) {
                 if (gastoAct < mejorGasto) 
                     mejorGasto = gastoAct;
             }
             else {
-                int estOptimista = (n - k - 1) * minElto;
+                int estOptimista = 0;
+                for (int l = k + 1; l < n; ++l) {
+                    estOptimista += minEltos[l];
+                }
                 if (estOptimista + gastoAct < mejorGasto)
-                    resolver(soluc, k + 1, n, m, super, mejorGasto, gastoAct, minElto);
+                    resolver(soluc, k + 1, n, m, super, mejorGasto, gastoAct, minEltos);
             }
             gastoAct -= super[i][k];
         }
@@ -48,17 +48,17 @@ void resuelveCaso() {
     std::cin >> m >> n;
     mejorGasto = INT_MAX;
     Matrix precios(m, std::vector<int>(n));
-    int aux = INT_MAX;
-    // Lectura de datos
-    for (auto& e : precios) {
-        for (auto& i : e) {
-            std::cin >> i;
-            if (aux > i) aux = i;
+    std::vector<int> precioMin(n, INT_MAX);
+    for (int i = 0; i < m; ++i) {
+        for (int j = 0; j < n; ++j) {
+            std::cin >> precios[i][j];
+            if (precioMin[j] > precios[i][j])
+                precioMin[j] = precios[i][j];
         }
     }
     // vector del nº de productos de cada supermercado
     std::vector<int> soluc(m, 0);
-    resolver(soluc, 0, n, m, precios, mejorGasto, 0, aux);
+    resolver(soluc, 0, n, m, precios, mejorGasto, 0, precioMin);
     if (mejorGasto == INT_MAX) std::cout << "Sin solucion factible" << std::endl;
     else std::cout << mejorGasto << std::endl;
 }
