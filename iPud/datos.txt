@@ -1,0 +1,40 @@
+addSong cancion0 A 8
+addSong cancion1 A 50
+addSong cancion2 A 74
+addSong cancion3 A 59
+addSong cancion4 A 31
+addSong cancion5 A 73
+addSong cancion6 A 45
+addSong cancion7 A 79
+addSong cancion8 A 24
+addSong cancion9 A 10
+deleteSong cancion5
+addToPlaylist cancion2
+addToPlaylist cancion3
+totalTime
+play
+play
+addSong cancion3 A 70
+addToPlaylist cancion7
+addToPlaylist cancion3
+deleteSong cancion8
+addToPlaylist cancion5
+play
+addSong cancion2 A 68
+addToPlaylist cancion3
+addToPlaylist cancion9
+addToPlaylist cancion1
+deleteSong cancion2
+addToPlaylist cancion6
+totalTime
+recent 9
+play
+deleteSong cancion7
+totalTime
+recent 9
+addToPlaylist cancion8
+addSong cancion4 A 97
+deleteSong cancion3
+recent 7
+recent 5
+FIN
